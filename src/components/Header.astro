@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/logo_512x512.png';
+import { Image } from "astro:assets";
+import logo from "../assets/logo_512x512.png";
 
 interface Props {
   showBlogLink?: boolean;
@@ -11,19 +11,23 @@ const { showBlogLink = false } = Astro.props;
 
 <header class="site-header">
   <div class="container" style="max-width: 56rem;">
-    {showBlogLink && (
-      <nav style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
-        <a href="/blog" class="nav-link">Blog</a>
-      </nav>
-    )}
+    {
+      showBlogLink && (
+        <nav style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
+          <a href="/blog" class="nav-link">
+            Blog
+          </a>
+        </nav>
+      )
+    }
     <a href="/" style="text-decoration: none;">
       <Image
         width="150"
         height="150"
         src={logo}
         alt="Mwananchi Tech Seal"
-        loading="eager" 
-        fetchpriority="high" 
+        loading="eager"
+        fetchpriority="high"
         class="site-logo"
       />
     </a>

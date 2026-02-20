@@ -1,17 +1,20 @@
 ---
-import '../styles/global.css';
-import { siteConfig } from '../content/config.ts'
+import "../styles/global.css";
+import { siteConfig } from "../content/config.ts";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Empowering every Kenyan citizen with accessible parliamentary data and insights." } = Astro.props;
+const {
+  title,
+  description = "Empowering every Kenyan citizen with accessible parliamentary data and insights.",
+} = Astro.props;
 const { plausible } = siteConfig;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,14 +22,16 @@ const { plausible } = siteConfig;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/assets/logo_64x64.png" />
-    
-    {plausible.enabled && (
-      <script 
-        defer 
-        data-domain={plausible.domain} 
-        src={plausible.src || 'https://plausible.io/js/script.js'}
-      />
-    )}
+
+    {
+      plausible.enabled && (
+        <script
+          defer
+          data-domain={plausible.domain}
+          src={plausible.src || "https://plausible.io/js/script.js"}
+        />
+      )
+    }
   </head>
   <body>
     <slot />
