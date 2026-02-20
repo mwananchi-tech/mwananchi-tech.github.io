@@ -10,9 +10,4 @@ export default defineConfig({
       theme: "github-dark",
     },
   },
-  plausible: {
-    enabled: true,
-    domain: "mwananchi-tech.github.io",
-    src: "https://plausible.c12i.xyz/js/script.js",
-  },
 });
