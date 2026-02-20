@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const hasBlogPosts = allPosts.length > 0;
+---
+
+<BaseLayout title="Mwananchi Tech">
+  <Header showBlogLink={hasBlogPosts} />
+
+  <section class="intro-section">
+    <div class="container" style="max-width: 48rem;">
+      <p class="intro-text font-serif">
+        Open tools that turn complex parliamentary proceedings into clear,
+        usable information - citizens, journalists, researchers, and advocates
+        building a more transparent Kenya.
+      </p>
+    </div>
+  </section>
+
+  {projects.length > 0 && (
+    <section class="projects-section">
+      <div class="container">
+        <div class="projects-grid">
+          {projects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              github={project.data.github}
+              live={project.data.live}
+              accentColor={project.data.accentColor}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</BaseLayout>

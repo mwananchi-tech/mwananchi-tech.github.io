@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all published blog posts, sorted by date (newest first)
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// If no posts, redirect to home
+if (posts.length === 0) {
+  return Astro.redirect('/');
+}
+---
+
+<BaseLayout title="Blog | Mwananchi Tech" description="Articles and updates from Mwananchi Tech">
+  <Header showBlogLink={false} />
+
+  <section class="blog-section">
+    <div class="container">
+      <a href="/" class="back-link">
+        ← Back to Home
+      </a>
+      <h2 class="section-title">Blog</h2>
+      <div class="blog-list">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            date={post.data.date}
+            excerpt={post.data.description}
+            slug={post.slug}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

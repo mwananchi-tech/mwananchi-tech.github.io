@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  github?: string;
+  live?: string;
+  accentColor?: 'red' | 'navy';
+}
+
+const { title, description, github, live, accentColor = 'red' } = Astro.props;
+---
+
+<div class="project-card">
+  <div class={`project-card-accent ${accentColor}`}></div>
+  <div class="project-card-content">
+    <h3 class="project-title font-serif">{title}</h3>
+    <p class="project-description font-serif">{description}</p>
+    <div class="project-links">
+      {github && (
+        <a href={github} target="_blank" rel="noopener noreferrer">
+          GitHub{!live && ' →'}
+        </a>
+      )}
+      {live && (
+        <a href={live} target="_blank" rel="noopener noreferrer">
+          Live →
+        </a>
+      )}
+    </div>
+  </div>
+</div>
