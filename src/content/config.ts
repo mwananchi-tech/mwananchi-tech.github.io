@@ -6,6 +6,7 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string(),
     github: z.string().optional(),
+    huggingface: z.string().optional(),
     live: z.string().optional(),
     accentColor: z.enum(["red", "navy"]).default("red"),
     order: z.number().default(0),

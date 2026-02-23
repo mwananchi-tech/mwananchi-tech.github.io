@@ -3,11 +3,19 @@ interface Props {
   title: string;
   description: string;
   github?: string;
+  huggingface?: string;
   live?: string;
   accentColor?: "red" | "navy";
 }
 
-const { title, description, github, live, accentColor = "red" } = Astro.props;
+const {
+  title,
+  description,
+  github,
+  huggingface,
+  live,
+  accentColor = "red",
+} = Astro.props;
 ---
 
 <div class="project-card">
@@ -18,14 +26,21 @@ const { title, description, github, live, accentColor = "red" } = Astro.props;
     <div class="project-links">
       {
         github && (
-          <a href={github} target="_blank" rel="noopener noreferrer">
+          <a href={github} target="_blank" rel="noopener">
             GitHub{!live && " →"}
           </a>
         )
       }
       {
+        huggingface && (
+          <a href={github} target="_blank" rel="noopener">
+            HuggingFace{!live && " →"}
+          </a>
+        )
+      }
+      {
         live && (
-          <a href={live} target="_blank" rel="noopener noreferrer">
+          <a href={live} target="_blank" rel="noopener">
             Live →
           </a>
         )
