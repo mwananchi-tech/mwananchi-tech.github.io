@@ -77,13 +77,15 @@ a:hover {
 }
 
 .site-header {
-  padding: 4rem 0;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .site-header {
-    padding: 6rem 0;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
   }
 }
 
@@ -105,7 +107,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .site-title {
-    font-size: 3.75rem;
+    font-size: 3.25rem;
   }
 }
 
@@ -119,7 +121,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .site-tagline {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -136,7 +138,6 @@ a:hover {
   color: var(--kenya-red);
 }
 .intro-section {
-  padding: 3rem 0;
   text-align: center;
 }
 
