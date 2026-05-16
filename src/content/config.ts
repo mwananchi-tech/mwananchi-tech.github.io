@@ -31,7 +31,7 @@ export const collections = {
 export const siteConfig = {
   plausible: {
     enabled: true,
-    domain: "mwananchi-tech.github.io",
+    domain: "mwananchi.tech",
     src: "https://plausible.c12i.xyz/js/script.js",
   },
 };
