@@ -1,9 +1,9 @@
 ---
 title: odnelazm
-description: Scraper + parser for recent and historical hansards from mzalendo.com - turning years of records into structured, searchable parliamentary data and enables interaction with LLMs via MCP.
+description: Core Rust library for scraping and parsing Kenya's Hansard from mzalendo.com. Covers both the current source (2013 to present) and the archive (2006 to 2013) with automatic source routing.
 github: https://github.com/mwananchi-tech/odnelazm
 accentColor: navy
 order: 2
 ---
 
-Odnelazm unlocks decades of parliamentary history for research and analysis.
+The foundation that powers the rest of the odnelazm toolchain. Fetches and parses parliamentary sittings, contributions, member profiles, and bill data into structured Rust types, covering both the current source and the historical archive.
