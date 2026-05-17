@@ -4,7 +4,7 @@ description: Kenya's parliamentary record, open and queryable. Browse bills, deb
 github: https://github.com/mwananchi-tech/bunge-hub
 live: https://bunge-hub.mwananchi.tech
 accentColor: red
-order: 3
+order: 1
 ---
 
 Bunge Hub makes Kenya's Hansard searchable and accessible. Every bill, every debate, every contribution, structured and openly available.

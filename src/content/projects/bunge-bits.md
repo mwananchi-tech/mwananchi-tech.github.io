@@ -4,7 +4,7 @@ description: Concise AI summaries of National Assembly and Senate sittings. Tran
 github: https://github.com/mwananchi-tech/bunge-bits
 live: https://bungebits.ke
 accentColor: red
-order: 1
+order: 2
 ---
 
 Bunge Bits is our flagship project that makes parliamentary proceedings accessible to every Kenyan.
